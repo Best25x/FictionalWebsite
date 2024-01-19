@@ -1,7 +1,16 @@
 from flask import Flask, render_template, request
+import csv
+
+csvfile = open('submissions.csv', 'w', newline='')
+writer = csv.writer(csvfile)
+writer.writerow(['name', 'email', 'message'])
+submissions = []
+
+for i in submissions:
+    writer.writerow(submissions)
+
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def index():
@@ -29,6 +38,7 @@ def confirmation():
         "email" : email,
         "message" : message
     }
+    submissions.append([name,email,message])
     return render_template("confirmation.html", data=props)
 
 
