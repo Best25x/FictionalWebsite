@@ -2,13 +2,12 @@ from flask import Flask, render_template, request
 import csv
 
 csvfile = open('submissions.csv', 'w', newline='')
-writer = csv.writer(csvfile)
-writer.writerow(['name', 'email', 'message'])
+fieldnames = ['name', 'email', 'number', 'address']
+writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+writer.writeheader()
+
+
 submissions = []
-
-for i in submissions:
-    writer.writerow(i)
-
 
 app = Flask(__name__)
 
@@ -32,16 +31,21 @@ def contact():
 def confirmation():
     name = request.args.get('name')
     email = request.args.get('email')
-    message = request.args.get('message')
+    number = request.args.get('number')
+    address = request.args.get('address')
     props = {
         "name" : name,
         "email" : email,
-        "message" : message
+        "number" : number,
+        "address" : address
     }
-    submissions.append([name,email,message])
+    submissions.append((name,email,number,address))
     return render_template("confirmation.html", data=props)
 
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
 
+for name, email, number, address in submissions:
+    print(f"{name}, {email}, {number}, {address}")
+    writer.writerow({'name': name, 'email': email, 'number': number, 'address': address})
