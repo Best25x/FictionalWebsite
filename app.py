@@ -1,13 +1,11 @@
 from flask import Flask, render_template, request
 import csv
+submissions = []
 
 csvfile = open('submissions.csv', 'w', newline='')
 fieldnames = ['name', 'email', 'number', 'address']
 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 writer.writeheader()
-
-
-submissions = []
 
 app = Flask(__name__)
 
@@ -45,7 +43,8 @@ def confirmation():
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
-
-for name, email, number, address in submissions:
-    print(f"{name}, {email}, {number}, {address}")
-    writer.writerow({'name': name, 'email': email, 'number': number, 'address': address})
+    print("hi")
+    if len(submissions) > 0:
+        for name, email, number, address in submissions:
+            print(f"{name}, {email}, {number}, {address}")
+            writer.writerow({'name': name, 'email': email, 'number': number, 'address': address})
