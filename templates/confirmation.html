@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 5 Example</title>
+  <title>DreamQuest VR</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,47 +11,48 @@
 
 <nav class="navbar navbar-expand-sm" style="background-color:#fef0ec;font-family:'Monaco', 'Courier New', monospace;">
 
-  <div class="container-fluid">
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item" style="color:#384a73">
-        <img src="../static/logo.png" style="width:42px;height:40px;vertical-align:center"/>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:#384a73" href="./">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:#384a73" href="./about">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:#384a73" href="./products">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:#384a73" href="./contact">Contact</a>
-      </li>
-    </ul>
-  </div>
+    <div class="container-fluid">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item" style="color:#384a73">
+          <img src="../static/logo.png" style="width:42px;height:40px;vertical-align:center"/>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#384a73;padding-right:20px" href="./">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#384a73;padding-right:20px" href="./about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#384a73;padding-right:20px" href="./products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color:#384a73;" href="./contact">Contact</a>
+        </li>
+      </ul>
+    </div>
 
-</nav>
+  </nav>
 
-<div class="container-fluid bg-primary text-white text-center">
-
-  <h1>Contact</h1>
+<div class="container-fluid text-center" style="color:#384a73;background-color:#ffe3e2;padding-top:50px;padding-bottom:50px;font-family:'Monaco', 'Courier New', monospace;">
+  <h1>C o n t a c t</h1>
 </div>
 
-<div class="container mt-5">
+<div class="container-fluid" style="background-color:#fef0ec;color:#384a73;font-family:'Monaco', 'Courier New', monospace;">
   <div class="row">
-    <h2>Message Received!</h2>
-    <p>Thank you for signing up for our newsletter! You will be receiving your first newsletter soon.
-      <br />
-      Name: {{data.name}}
-      <br />
-      Email: {{data.email}}
-      <br />
-      Number: {{data.number}}
-      <br />
-      Address: {{data.address}}
-    </p>
+    <div style="margin:50px;margin-bottom:333px">
+      <h2>Message Received!</h2>
+      <p>Thank you for signing up for our newsletter! You will be receiving your first newsletter soon.
+        <br />
+        Name: {{data.name}}
+        <br />
+        Email: {{data.email}}
+        <br />
+        Number: {{data.number}}
+        <br />
+        Address: {{data.address}}
+      </p>
+    </div>
   </div>
 </div>
 
