@@ -7,7 +7,7 @@ writer.writerow(['name', 'email', 'message'])
 submissions = []
 
 for i in submissions:
-    writer.writerow(submissions)
+    writer.writerow(i)
 
 
 app = Flask(__name__)
